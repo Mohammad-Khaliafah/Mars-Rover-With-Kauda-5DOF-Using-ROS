@@ -69,7 +69,7 @@ The Mars Rover project aims to develop a functional rover that can navigate the 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/mars-rover-project.git
+   git clone https://github.com/mohammad-khalifah/Mars-Rover-With-Kauda-5DOF-Using-ROS.git
    cd mars-rover-project
    ```
 2. Install the necessary dependencies:
