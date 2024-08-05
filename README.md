@@ -57,12 +57,11 @@ The Mars Rover project aims to develop a functional rover that can navigate the 
 - **Robot Operating System (ROS)**: 
   - Used for developing and deploying control software.
   - Provides a flexible framework for writing robot software.
+  ![image](https://github.com/user-attachments/assets/4e646ef9-2877-4fc7-b3cd-2cd079d122d1)
+
 - **Control Algorithms**: 
   - Implemented PID control for motor speed and direction.
   - Ensures precise and smooth control of the rover’s movements.
-- **Navigation and Path Planning**: 
-  - Developed robust algorithms for autonomous navigation and obstacle avoidance.
-  - Includes SLAM (Simultaneous Localization and Mapping) for mapping the environment.
 - **Sample Collection Module**: 
   - Programmed 5-DOF robotic arm for precise sample collection.
   - Controlled through ROS, allowing for complex manipulation tasks.
