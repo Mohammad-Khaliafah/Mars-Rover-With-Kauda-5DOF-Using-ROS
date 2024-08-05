@@ -1,6 +1,7 @@
 # Mars Rover Project
 
 Welcome to the Mars Rover project repository! This project involves designing, fabricating, and testing a Mars Rover capable of autonomous navigation and sample collection. The rover is equipped with a six-wheel drive system, a robust suspension, custom PCBs, and is controlled using the Robot Operating System (ROS).
+![WhatsApp Image 2024-08-05 at 05 59 13_29d9cdc6](https://github.com/user-attachments/assets/fbd9cfed-e00a-465d-b8f2-a58f09bdd95c)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -11,7 +12,6 @@ Welcome to the Mars Rover project repository! This project involves designing, f
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributors](#contributors)
-- [License](#license)
 
 ## Introduction
 The Mars Rover project aims to develop a functional rover that can navigate the harsh Martian terrain, collect samples, and perform environmental analysis. This repository contains all the necessary files and instructions to replicate the project.
@@ -91,11 +91,5 @@ The Mars Rover project aims to develop a functional rover that can navigate the 
    ```
 
 ## Contributors
-- **Your Name** - [Mohammad Khalifah](https://github.com/Mohammad-Khaliafah)
+- **Mohammad Khalifah** - [Mohammad-Khalifah](https://github.com/Mohammad-Khaliafah)
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Please replace placeholders (e.g., `yourusername`, `yourname`) with your actual details. This README structure will provide a comprehensive overview of your Mars Rover project on GitHub.
