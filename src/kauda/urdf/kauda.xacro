@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kauda">
+  <link name="world"/>
+
+  <link name="base_link"/>
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>    <dynamics damping="10.0" friction="1.0"/>
+  </joint>
+
+  <link name="base_footprint">
+    <inertial>
+      <origin xyz="-0.00530925790576836 -3.94116071453926E-06 -0.018307245361305" rpy="0 0 0" />
+      <mass
+        value="0.377109058292487" />
+      <inertia
+        ixx="0.00107088440434545"
+        ixy="1.10905798168356E-07"
+        ixz="1.14163831904201E-05"
+        iyy="0.00116271156830369"
+        iyz="-9.05276896773614E-08"
+        izz="0.00201984908828289" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/base_footprint.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <dynamics damping="10.0" friction="1.0"/>
+  </joint>
+
+  <link name="link1">
+    <inertial>
+      <origin xyz="0.00229721462998489 -0.000230609851214751 0.0482498832031781" rpy="0 0 0" />
+      <mass value="0.470486507419155" />
+      <inertia
+        ixx="0.00109023137916716"
+        ixy="1.48462873070982E-05"
+        ixz="-3.51550938929572E-05"
+        iyy="0.000963399988424884"
+        iyz="5.36500924620431E-06"
+        izz="0.000851399422239088" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint1" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="link1" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1.5708" upper="1.5708" effort="0" velocity="0" />
+  </joint>
+
+  <link name="link2">
+    <inertial>
+      <origin xyz="-0.010018047532452 -0.0032833462210182 0.0861794590904751" rpy="0 0 0" />
+      <mass value="0.597764887805913" />
+      <inertia
+        ixx="0.000811203102330621"
+        ixy="3.84670753886074E-06"
+        ixz="-2.39198660268358E-06"
+        iyy="0.000739547758043914"
+        iyz="-7.87293376002064E-06"
+        izz="0.000616552622984094" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint2" type="revolute">
+    <origin xyz="0.0059659 0.00063891 0.08615" rpy="0 0 0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="-0.10648 0.99431 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="0" velocity="0" />
+  </joint>
+
+  <link name="link3">
+    <inertial>
+      <origin xyz="-0.0169011018631835 0.0380839207520736 0.0116356442109422" rpy="0 0 0" />
+      <mass value="0.268857504457809" />
+      <inertia
+        ixx="0.000197411173994711"
+        ixy="-5.06366609444836E-06"
+        ixz="1.24082418327179E-05"
+        iyy="0.000232360787237225"
+        iyz="-2.627629940429E-07"
+        izz="0.0001779803445574" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="joint3" type="revolute">
+    <origin xyz="-0.0014911 -0.042422 0.19664" rpy="0 0 0" />
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="-0.10648 0.99431 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="0" velocity="0" />
+  </joint>
+
+  <link name="link4">
+    <inertial>
+      <origin xyz="0.000127731718039426 -0.000925010788561428 0.0895037641109863" rpy="0 0 0" />
+      <mass value="0.0365664078243449" />
+      <inertia
+        ixx="2.72405728800808E-05"
+        ixy="9.0441219157387E-07"
+        ixz="-8.85652493454715E-08"
+        iyy="1.88817780992797E-05"
+        iyz="8.92970457314301E-07"
+        izz="1.79057599567989E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint4" type="revolute">
+    <origin xyz="-0.033191 0.031215 0.05663" rpy="0 0 0" />
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="0" velocity="0" />
+  </joint>
+
+  <link name="link5">
+    <inertial>
+      <origin xyz="-0.00237290651034774 0.0221320248227368 0.00766620022500086" rpy="0 0 0" />
+      <mass value="0.0249727462641256" />
+      <inertia
+        ixx="6.86232658161813E-06"
+        ixy="2.09116249750625E-07"
+        ixz="-1.55862695274545E-08"
+        iyy="4.92498141280146E-06"
+        iyz="1.4679899460208E-07"
+        izz="7.19810856236306E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint5" type="revolute">
+    <origin xyz="0.0023959 -0.022372 0.1184" rpy="0 0 0" />
+    <parent link="link4" />
+    <child link="link5" />
+    <axis xyz="-0.10648 0.99431 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="0" velocity="0" />
+  </joint>
+
+  <link name="end_effector">
+    <inertial>
+      <origin xyz="-0.0734713584909865 -0.00431769797661067 -0.00391571033132621" rpy="0 0 0" />
+      <mass value="0.0303740016851369" />
+      <inertia
+        ixx="4.96476260358216E-06"
+        ixy="-2.13950973868504E-07"
+        ixz="1.15712582705699E-07"
+        iyy="4.59166886150046E-06"
+        iyz="-1.8601356748186E-07"
+        izz="6.06172170169276E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/end_effector.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://kauda/meshes/end_effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="end_effector_joint" type="fixed">
+    <origin xyz="-0.0014444 0.021426 0.12893" rpy="0.0 -1.5708 0.0" />
+    <parent link="link5" />
+    <child link="end_effector" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  
+
+ <link name="finger">
+ <inertial>
+      <origin xyz=" -0.00391571033132621 -0.00431769797661067 -0.0734713584909865" rpy="0 0 0" />
+      <mass value="0.0103740016851369" />
+      <inertia
+        ixx="0.00024166666666666667"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.00024166666666666667"
+        iyz="0.0"
+        izz="0.00024166666666666667" />
+    </inertial>
+	<visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+         <geometry>
+          <mesh filename="package://kauda/meshes/finger.stl"/>
+         </geometry>
+            <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+         <geometry>
+          <mesh filename="package://kauda/meshes/finger.stl"/>
+         </geometry>
+        </collision>
+  </link>
+
+
+<joint name="joint6" type="prismatic">
+    <axis xyz="0 1 0"  />
+    <origin xyz=" 0.021 0.021426 -0.03893" rpy="0 0 0" />
+    <limit effort="1.0" lower="-0.011" upper="0.011" velocity="0.5"/>
+    <parent link="end_effector" />
+    <child link="finger" />
+  </joint>
+
+
+
+</robot>
